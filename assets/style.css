@@ -46,8 +46,10 @@
 }
 
 .section, .city-container {
-    height: 50px;
-    margin: 0px;
+    height: 200px;
+    margin-left: 350px;
+    margin-right: 25px;
+    border: 1px solid black;
 }
 
 .col-8, .city-title {
@@ -74,4 +76,8 @@
     margin-bottom: 5px;
     margin-left: -45px;
     font-weight: 600;
+}
+
+.h3, .h-3 {
+    margin-left: 350px;
 }
