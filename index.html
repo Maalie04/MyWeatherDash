@@ -14,13 +14,27 @@
 </header>
 <body>
     <main class="flex-row" style="border: 1px solid black";>
+        <div class="col-10 city-title">
+            <ul class="weather-variable" id="variable"> 
+            <li class="temp">Temp: </li>   
+            <li class="wind">Wind: </li>  
+            <li class="humidity">Humidity: </li>  
+            <li class="uv-index">UV Index: </li>   
+            </ul>
+        </div>
     <div class="col-2">
-        <input type="text" class="city-search">
+        <input type="text" class="city-search" placeholder="Enter City name...">
         <button class="submit">Search</button>
+        <div class="border-line"></div>
         <ul class="searched-cities"></ul>
     </div>
     
-    <div class="col-10" id="weather-info"></div>
+    
+    <section class="city-container">
+        <div class="col-10" id="weather-info"></div>
+        <div class="city" id="city-info"></div>
+        <div class="forecast col-5"></div>
+    </section>
     </main>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>"

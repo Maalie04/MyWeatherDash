@@ -1,0 +1,64 @@
+.banner, .app-title {
+    background-color: blue;
+    height: 80px;
+    width: 100%;
+    padding-top: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+    color: white;
+}
+
+.main, .flex-row {
+    margin-top: 20px;
+    height: 100vmax;
+}
+
+.button, .submit {
+    width: 280.33px;
+    padding: 3px;
+    border-radius: 15%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    background-color: blue;
+    color: white;
+    font-weight:500;
+}
+
+.border-line {
+    margin-top: 10px;
+    height: 2px;
+    color: blue;
+    width: 280px;
+    border: 1px solid blue;
+}
+
+.input, .city-search {
+    width: 280.33px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    height: 35px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.searched-cities {
+    margin-top: 10px;
+    width: 180px;
+}
+
+.section, .city-container {
+    height: 50px;
+    margin: 0px;
+}
+
+.col-8, .city-title {
+    margin-top: 15px;
+    margin-left: 350px;
+    height: 150px;
+    border: 1px solid blue;
+    width: 140vh;
+}
+
+.col-2 {
+    margin-right: 15px;
+   padding-right: 15px;
+}
