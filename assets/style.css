@@ -62,3 +62,16 @@
     margin-right: 15px;
    padding-right: 15px;
 }
+
+.ul {
+    list-style: none;
+}
+
+.li, .temp, .wind, .humidity, .uv-index {
+    list-style: none;
+    padding-top: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: -45px;
+    font-weight: 600;
+}
