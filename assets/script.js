@@ -4,7 +4,12 @@ var cityArray = JSON.parse(localStorage.getItem("cities")) || [];
 var submitHandler = function (event) {
     event.preventDefault();
     var cityName = $(".city-search").val().trim();
+
+    if(cityName === ""){
+        return;
+    }
     console.log(cityName);
+    // console.log(tempeture.value)
 
     searchWeatherApi(cityName);
     cityArray.push(cityName);
@@ -14,8 +19,8 @@ var submitHandler = function (event) {
 
 function searchWeatherApi(cityName) {
 
-    var requestUrl = ('https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&units=imperial&appid=4e4346890dbabb049a4ba08f09b5e215')
-    
+    var requestUrl = ('https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&units=imperial&appid=4e4346890dbabb049a4ba08f09b5e215');
+
     fetch(requestUrl)
         .then(function (response) {
             return response.json();
@@ -23,12 +28,22 @@ function searchWeatherApi(cityName) {
         .then(function (data) {
             console.log(data);
 
-            var card = $("<div>").addClass("card").attr("style", "background-color: blue", "width: 180px");
+            var card = $("<div>").addClass("card").attr("style", "background-color: blue");
             var cardTitle = $("<h2>").addClass("cardTitle").text(data.name);
             card.append(cardTitle);
-            $("#weather-info").append(card);
+            $(".searched-cities").append(card);
         });
 }
+
+function fiveDay(requestLatLon) {
+
+     
+
+}
+
+
+
+
 
 
 

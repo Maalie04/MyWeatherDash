@@ -1,3 +1,10 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
 .banner, .app-title {
     background-color: blue;
     height: 80px;
@@ -9,6 +16,7 @@
 }
 
 .main, .flex-row {
+    display: block;
     margin-top: 20px;
     height: 100vmax;
 }
@@ -43,6 +51,7 @@
 .searched-cities {
     margin-top: 10px;
     width: 180px;
+    margin-left: -10px;
 }
 
 .section, .city-container {
@@ -52,17 +61,18 @@
     border: 1px solid black;
 }
 
-.col-8, .city-title {
+.col-7, #weather-info {
     margin-top: 15px;
     margin-left: 350px;
     height: 150px;
     border: 1px solid blue;
-    width: 140vh;
+    width: 800px;
 }
 
 .col-2 {
-    margin-right: 15px;
-   padding-right: 15px;
+    /* margin-right: 15px;
+   padding-right: 15px; */
+   float: left;
 }
 
 .ul {
@@ -80,4 +90,11 @@
 
 .h3, .h-3 {
     margin-left: 350px;
+}
+
+.card {
+    margin-left: -28px;
+    width: 280px;
+    color: white;
+    margin-bottom: 5px;
 }
