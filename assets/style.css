@@ -54,14 +54,10 @@ body {
     margin-left: -10px;
 }
 
-.section, .city-container {
-    height: 200px;
-    margin-left: 350px;
-    margin-right: 25px;
-    border: 1px solid black;
-}
+
 
 .col-10, #weather-info {
+    display: flex;
     margin-top: 15px;
     margin-left: 350px;
     height: 350px;
@@ -69,7 +65,8 @@ body {
     width: 800px;
 }
 
-.col-10, .city-title {
+.col-10, .city-container {
+    display: flex;
     margin-top: 35px;
     margin-left: 350px;
     height: 150px;
