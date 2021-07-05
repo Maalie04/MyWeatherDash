@@ -5,7 +5,12 @@
 }
 
 body {
-    
+    background-image: url(clear-sky.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    height: 100vh;
+
 }
 .banner, .app-title {
     background-color: blue;
