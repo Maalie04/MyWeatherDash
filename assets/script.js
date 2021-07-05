@@ -1,4 +1,8 @@
 var cityArray = JSON.parse(localStorage.getItem("cities")) || [];
+var weatherTemp = document.querySelector('temp');
+var weatherWind = document.querySelector('wind');
+var weatherHumidity = document.querySelector('humidity');
+var cityList = document.querySelector('#previous-cities');
 
 
 var submitHandler = function (event) {
@@ -14,6 +18,7 @@ var submitHandler = function (event) {
     searchWeatherApi(cityName);
     cityArray.push(cityName);
     localStorage.setItem("cities", JSON.stringify(cityArray));
+    
 };
 
 
@@ -28,6 +33,9 @@ function searchWeatherApi(cityName) {
         .then(function (data) {
             console.log(data);
 
+                // if(cityName !== data.name){
+                //     return;
+                // }
             var card = $("<div>").addClass("card").attr("style", "background-color: blue");
             var cardTitle = $("<h2>").addClass("cardTitle").text(data.name);
             card.append(cardTitle);
@@ -36,6 +44,8 @@ function searchWeatherApi(cityName) {
 }
 
 function fiveDay(requestLatLon) {
+
+
     var oneCallUrl = ('https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}')
 
      
