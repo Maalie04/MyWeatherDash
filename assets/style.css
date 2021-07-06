@@ -103,21 +103,25 @@ body {
 .future-forecast, .weather-forecast, .temp {
     /* display:; */
 }
-/* .future-forecast .temp {
+.future-forecast .temp {
     display: flex;
     justify-content: space-between;
-} */
-/* .future-forecast .wind {
+} 
+ .future-forecast .wind {
     display: flex;
 }
 .future-forecast .humidity {
     display: flex;
-} */
+}
 
 
 .weather-item, #weather-item {
-    margin-left: -50px;
+    margin-left: -200px;
 }
+.weather-icon {
+font-size: 2px;
+}
+
 
 .cityTitle {
     text-align: center;
