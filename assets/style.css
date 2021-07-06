@@ -10,7 +10,7 @@ body {
     background-size: cover;
     align-items: center;
     height: 100vh;
-
+    overflow: hidden;
 }
 .banner, .app-title {
     background-color: blue;
@@ -55,15 +55,15 @@ body {
     border: 1px solid black;
     border-radius: 5px;
 }
-/* .searched-cities {
+.searched-cities {
     margin-top: 10px;
     width: 180px;
-    margin-left: -10px;
-} */
+    margin-left: 26px;
+}
 
 
 
-.city-title {
+/* .city-title {
    display: flex;
    justify-content: center ;
     margin-top: 50px;
@@ -71,22 +71,60 @@ body {
     height: 350px;
     border: 0px solid blue;
     width: 800px;
-}
+} */
 
-.future-forecast, .city-container {
+.city-container {
     display: flex;
     margin-top: 20px;
-    margin-bottom: 200px;
+    margin-bottom: 100px;
     margin-left: 350px;
-    height: 150px;
+    height: 250px;
     border: 2px solid blue;
     width: 800px;
+    
 }
+
+
+.future-forecast {
+    display: flex;
+    margin-top: 0px;
+    margin-bottom: 200px;
+    margin-left: 350px;
+    height: 250px;
+    border: 2px solid blue;
+    width: 800px;
+    padding: 20px;
+    justify-content: center;
+   
+}
+.future-forecast, .weather-forecast {
+    display: flex;
+}
+.future-forecast, .weather-forecast, .temp {
+    /* display:; */
+}
+/* .future-forecast .temp {
+    display: flex;
+    justify-content: space-between;
+} */
+/* .future-forecast .wind {
+    display: flex;
+}
+.future-forecast .humidity {
+    display: flex;
+} */
+
 
 .weather-item, #weather-item {
-    margin-left: 50px;
+    margin-left: -50px;
 }
 
+.cityTitle {
+    text-align: center;
+    align-items: center;
+    margin-left: 220px;
+    font-weight: 700;
+}
 
 .col-2 {
     /* margin-right: 15px;
@@ -106,6 +144,7 @@ body {
     margin-bottom: 5px;
     margin-left: -33px;
     font-weight: 600;
+    justify-content: space-evenly;
 }
 
 .h3, .h-3 {
@@ -118,4 +157,5 @@ body {
     width: 280px;
     color: white;
     margin-bottom: 5px;
+    text-align: center;
 }
