@@ -2,21 +2,24 @@ var cityArray = JSON.parse(localStorage.getItem("cities")) || [];
 console.log(cityArray)
 var cityList = document.querySelector('.previous-cities');
 
-if(cityArray.length > 0){
-    console.log(cityArray.length)
-    for(var i=0; i<cityArray.length; i++){
-        var li = $('<li>').addClass('list-group-item').Html('boston');
-        
-        console.log("Hello")
-       cityList.append(li)
-    }
-
-}
 
 var weatherTemp = document.querySelector('temp');
 var weatherWind = document.querySelector('wind');
 var weatherHumidity = document.querySelector('humidity');
 
+if (cityArray.length > 0) {
+    console.log(cityArray.length)
+    for (var i = 0; i < cityArray.length; i++) {
+      var buttonEl =  $('<button>').addClass('button').attr("style", "background-color: blue");
+        var li = $('<li>').addClass('list-group-item');
+        $('searched-cities').append(cityArray[i]);
+        $('searched-cities').append(buttonEl);
+        console.log(cityArray[i])
+        cityList.append(cityArray[i])
+        // li.appendChild(button)
+    }
+
+}
 
 var submitHandler = function (event) {
     event.preventDefault();
@@ -27,16 +30,15 @@ var submitHandler = function (event) {
     }
     console.log(cityName);
     // makes sure previous city isnt listed in the array
-   if(cityArray.indexOf(cityName) === -1){
-       cityArray.push(cityName);
+    if (cityArray.indexOf(cityName) === -1) {
+        cityArray.push(cityName);
+    }
 
-   }
-
-
+   
 
     searchWeatherApi(cityName);
     localStorage.setItem("cities", JSON.stringify(cityArray));
-    console.log(cityArray);
+    // console.log(cityArray);
 };
 
 
@@ -51,14 +53,18 @@ function searchWeatherApi(cityName) {
         .then(function (data) {
             console.log(data);
 
-            // if(cityName !== data.name){
+            // if(!cityName){
             //     return;
             // }
+
+            weatherTemp = data.temp;
+            console.log(weatherTemp);
             var card = $("<div>").addClass("card").attr("style", "background-color: blue");
             var cardTitle = $("<h2>").addClass("cardTitle").text(data.name);
             card.append(cardTitle);
-            // $(".searched-cities").append(card);
+            $(".searched-cities").append(card);
 
+            // console.log(data.temp)
             fiveDay(data.coord.lat, data.coord.lon);
         });
 }
@@ -79,12 +85,8 @@ function fiveDay(lat, lon) {
                 console.log(data.daily[i]);
 
                 var daily = data.daily[i];
-
-
-
+                 console.log(data.main)
             }
-
-
         });
 
 }
