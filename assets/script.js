@@ -3,9 +3,10 @@ console.log(cityArray)
 var cityList = document.querySelector('.previous-cities');
 
 
-var weatherTemp = document.querySelector('temp');
-var weatherWind = document.querySelector('wind');
-var weatherHumidity = document.querySelector('humidity');
+var currentWeatherTemp = document.querySelector('temp');
+var currentWeatherWind = document.querySelector('wind');
+var currentWeatherHumidity = document.querySelector('humidity');
+
 
 if (cityArray.length > 0) {
     console.log(cityArray.length)
@@ -88,6 +89,13 @@ function fiveDay(lat, lon) {
                  console.log(data.main)
             }
         });
+
+}
+
+function showWeatherData(data){
+    var {temp, wind, humidity, uvi} = data.current;
+
+
 
 }
 
