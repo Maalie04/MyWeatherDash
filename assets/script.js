@@ -11,12 +11,12 @@ var currentWeatherHumidity = document.querySelector('humidity');
 if (cityArray.length > 0) {
     console.log(cityArray.length)
     for (var i = 0; i < cityArray.length; i++) {
-        var buttonEl = $('<button>').addClass('button').attr("style", "background-color: blue");
-        var li = $('<li>').addClass('list-group-item');
-        $('searched-cities').append(cityArray[i]);
-        $('searched-cities').append(buttonEl);
+        var card = $("<div>").addClass("card").attr("style", "background-color: blue");
+        var cardTitle = $("<h2>").addClass("cardTitle").text(cityArray[i]);
+        card.append(cardTitle);
+        $(".searched-cities").append(card);
         console.log(cityArray[i])
-        cityList.append(cityArray[i])
+        // cityList.append(cityArray[i])
         // li.appendChild(button)
     }
 
