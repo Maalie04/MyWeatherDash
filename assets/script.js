@@ -11,7 +11,7 @@ var currentWeatherHumidity = document.querySelector('humidity');
 if (cityArray.length > 0) {
     console.log(cityArray.length)
     for (var i = 0; i < cityArray.length; i++) {
-      var buttonEl =  $('<button>').addClass('button').attr("style", "background-color: blue");
+        var buttonEl = $('<button>').addClass('button').attr("style", "background-color: blue");
         var li = $('<li>').addClass('list-group-item');
         $('searched-cities').append(cityArray[i]);
         $('searched-cities').append(buttonEl);
@@ -35,8 +35,6 @@ var submitHandler = function (event) {
         cityArray.push(cityName);
     }
 
-   
-
     searchWeatherApi(cityName);
     localStorage.setItem("cities", JSON.stringify(cityArray));
     // console.log(cityArray);
@@ -52,14 +50,15 @@ function searchWeatherApi(cityName) {
             return response.json();
         })
         .then(function (data) {
-            console.log(data);
+            console.log(data.main.temp);
+            console.log(data.name);
 
-            // if(!cityName){
+
+            // if(cityName !== data.name){
             //     return;
             // }
 
-            weatherTemp = data.temp;
-            console.log(weatherTemp);
+
             var card = $("<div>").addClass("card").attr("style", "background-color: blue");
             var cardTitle = $("<h2>").addClass("cardTitle").text(data.name);
             card.append(cardTitle);
@@ -72,7 +71,6 @@ function searchWeatherApi(cityName) {
 
 function fiveDay(lat, lon) {
 
-
     var oneCallUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely&appid=4e4346890dbabb049a4ba08f09b5e215`
 
     fetch(oneCallUrl)
@@ -83,24 +81,14 @@ function fiveDay(lat, lon) {
             console.log(data);
 
             for (var i = 1; i < 6; i++) {
-                console.log(data.daily[i]);
-
                 var daily = data.daily[i];
-                 console.log(data.main)
+                console.log(daily);
+                console.log(daily.temp.day);
+                console.log();
             }
         });
 
 }
-
-function showWeatherData(data){
-    var {temp, wind, humidity, uvi} = data.current;
-
-
-
-}
-
-
-
 
 
 

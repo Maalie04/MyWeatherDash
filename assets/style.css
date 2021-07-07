@@ -9,8 +9,8 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     align-items: center;
-    height: 100vh;
-    overflow: hidden;
+    height: 100%;
+    /* overflow: hidden; */
 }
 .banner, .app-title {
     background-color: blue;
@@ -80,7 +80,7 @@ body {
     margin-left: 350px;
     height: 250px;
     border: 2px solid blue;
-    width: 800px;
+    width: 70%;
     
 }
 
@@ -88,11 +88,10 @@ body {
 .future-forecast {
     display: flex;
     margin-top: 0px;
-    margin-bottom: 200px;
     margin-left: 350px;
     height: 250px;
     border: 2px solid blue;
-    width: 800px;
+    width: 70%;
     padding: 20px;
     justify-content: center;
    
@@ -101,12 +100,12 @@ body {
     display: flex;
 }
 
-.future-forecast, .weather-forecast, .temp-f, .wind-f, .humidity-f {
+/* .future-forecast, .weather-forecast, .temp-f, .wind-f, .humidity-f {
     display: flex;
    flex-direction: row;
   
   
-} 
+}  */
  
 
 
@@ -118,11 +117,10 @@ font-size: 2px;
 }
 
 
-.cityTitle {
-    text-align: center;
-    align-items: center;
-    margin-left: 220px;
+.cityTitle, #cityTitle {
+    margin-left: 350px;
     font-weight: 700;
+    font-size: 20px;
 }
 
 .col-2 {
@@ -135,35 +133,63 @@ font-size: 2px;
 li {
     list-style: none;
 }
-.temp, .wind, .humidity, .uv-index {
-    
-    padding-top: 5px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+.temp {
+    margin-top: 42px;
+    margin-bottom: 15px;
+    margin-left: -33px;
+    font-weight: 600;
+    justify-content: space-evenly;
+}
+
+ .wind {
+    margin-bottom: 15px;
+    margin-left: -33px;
+    font-weight: 600;
+    justify-content: space-evenly;
+}
+ .humidity {
+    margin-bottom: 15px;
+    margin-left: -33px;
+    font-weight: 600;
+    justify-content: space-evenly;
+}
+  .uv-index {
+    margin-bottom: 15px;
     margin-left: -33px;
     font-weight: 600;
     justify-content: space-evenly;
 }
 
 .current-date, #current-date {
-    margin-left: -35px;
+    margin-left: 357px;
+    font-weight: 500;
+}
+.date, #date {
+    justify-content: space-around;
 }
 .cityTitle {
     margin-left: 295px;
    
 }
-.temp-f, .wind-f, .humidity-f {
-    display: flex;
-    flex-direction: column;
-    /* padding-top: 5px; */
-    margin-top: 5px; 
-     margin-bottom: 5px;
+.temp-f {
+    margin-top: 100px;
+    margin-bottom: 5px;
+    margin-left: -13px;
+    font-weight: 600;
+}
+.wind-f {
+    margin-top: 125px;
+    margin-bottom: 5px;
     margin-left: -33px;
     font-weight: 600;
-    align-items: center;
-    justify-content: center;
+    font-size: 11px;
 }
-
+.humidity-f {
+    margin-top: 160px;
+    margin-left: -33px;
+    font-weight: 600;
+    font-size: 11px;
+}
 .h3, .h-3 {
     margin-top: 60px;
     margin-left: 350px;
