@@ -52,17 +52,25 @@ function searchWeatherApi(cityName) {
         .then(function (data) {
             console.log(data.main.temp);
             console.log(data.name);
-
-
-            // if(cityName !== data.name){
-            //     return;
-            // }
+            //  console.log(data);
 
 
             var card = $("<div>").addClass("card").attr("style", "background-color: blue");
             var cardTitle = $("<h2>").addClass("cardTitle").text(data.name);
             card.append(cardTitle);
             $(".searched-cities").append(card);
+
+            var lis = document.getElementsByClassName(".temp");
+            // document.li.innerHTML = "";
+            console.log(data);
+            $(".temp").text("");
+            $(".cityTitle").text("");
+            $(".wind").text("");
+            $(".humidity").text("");
+            $(".cityTitle").append(data.name);
+            $(".temp").append("Temp: " + data.main.temp);
+            $(".wind").append("Wind: " + data.wind.speed);
+            $(".humidity").append("Humidiy: " + data.main.humidity);
 
             // console.log(data.temp)
             fiveDay(data.coord.lat, data.coord.lon);
@@ -83,9 +91,21 @@ function fiveDay(lat, lon) {
             for (var i = 1; i < 6; i++) {
                 var daily = data.daily[i];
                 console.log(daily);
+                console.log(data)
                 console.log(daily.temp.day);
+                console.log(daily.uvi);
                 console.log();
+
+                $(".temp-f").text("");
+                $(".wind-f").text("");
+                $(".humidity-f").text("");
+                $(".temp-f").append("Temp: " + daily.temp.day);
+                $(".wind-f").append("Wind: " + daily.wind_gust);
+                $(".humidity-f").append("Humidity: " + daily.humidity);
+
             }
+            $(".uv-index").text("");
+            $(".uv-index").append("UV-Index: " + daily.uvi);
         });
 
 }
