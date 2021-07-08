@@ -92,21 +92,9 @@ body {
     height: 250px;
     border: 2px solid blue;
     width: 70%;
-    padding: 20px;
     justify-content: center;
    
 }
-.future-forecast, .weather-forecast {
-    display: flex;
-}
-
-/* .future-forecast, .weather-forecast, .temp-f, .wind-f, .humidity-f {
-    display: flex;
-   flex-direction: row;
-  
-  
-}  */
- 
 
 
 .weather-item, #weather-item {
@@ -172,21 +160,21 @@ li {
    
 }
 .temp-f {
-    margin-top: 100px;
+    margin-top: 10px;
     margin-bottom: 5px;
-    margin-left: -13px;
+    margin-left: 33px;
     font-weight: 600;
 }
 .wind-f {
-    margin-top: 125px;
+    margin-top: 15px;
     margin-bottom: 5px;
-    margin-left: -33px;
+    margin-left: 33px;
     font-weight: 600;
     font-size: 11px;
 }
 .humidity-f {
-    margin-top: 160px;
-    margin-left: -33px;
+    margin-top: 20px;
+    margin-left: 33px;
     font-weight: 600;
     font-size: 11px;
 }
