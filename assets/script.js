@@ -63,6 +63,8 @@ function searchWeatherApi(cityName) {
             var lis = document.getElementsByClassName(".temp");
             // document.li.innerHTML = "";
             console.log(data);
+            $(".current-date").text("");
+            // $(".current-date").append(moment().format("MM,Do,YY"));
             $(".temp").text("");
             $(".cityTitle").text("");
             $(".wind").text("");
@@ -79,7 +81,7 @@ function searchWeatherApi(cityName) {
 
 function fiveDay(lat, lon) {
 
-    var oneCallUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely&appid=4e4346890dbabb049a4ba08f09b5e215`
+    var oneCallUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely&units=imperial&appid=4e4346890dbabb049a4ba08f09b5e215`
 
     fetch(oneCallUrl)
         .then(function (response) {
@@ -96,21 +98,50 @@ function fiveDay(lat, lon) {
                 console.log(daily.uvi);
                 console.log();
 
-                $(".temp-f").text("");
-                $(".wind-f").text("");
-                $(".humidity-f").text("");
-                $(".temp-f").append("Temp: " + daily.temp.day);
-                $(".wind-f").append("Wind: " + daily.wind_gust);
-                $(".humidity-f").append("Humidity: " + daily.humidity);
+                // $(".temp-f").text("");
+                // $(".wind-f").text("");
+                // $(".humidity-f").text("");
+                $(".temp-f" + i).text("Temp: " + daily.temp.day);
+                $(".wind-f" + i).text("Wind: " + daily.wind_gust);
+                $(".humidity-f" + i).text("Humidity: " + daily.humidity);
 
             }
             $(".uv-index").text("");
-            $(".uv-index").append("UV-Index: " + daily.uvi);
+            $(".uv-index").append("UVI-Index: " + daily.uvi);
+
+            // setPaige(daily.avi);
         });
 
 }
 
+// function setPaige(event) {
+
+//     var requestUrl = 'https://api.openweathermap.org/data/2.5/weather?q=Atlanta&units=imperial&appid=4e4346890dbabb049a4ba08f09b5e215';
+
+//     fetch(requestUrl)
+//         .then(function (response) {
+//             return response.json();
+//         })
+//         .then(function (data) {
+//             console.log(data.main.temp);
+//             console.log(data.name);
+
+//             $(".temp").text("");
+//             $(".cityTitle").text("");
+//             $(".wind").text("");
+//             $(".humidity").text("");
+//             $(".cityTitle").append(data.name);
+//             $(".temp").append("Temp: " + data.main.temp);
+//             $(".wind").append("Wind: " + data.wind.speed);
+//             $(".humidity").append("Humidiy: " + data.main.humidity);
 
 
 
+
+//         });
+// }
+
+
+// setPaige();
 $(".submit").on("click", submitHandler);
+searchWeatherApi("atlanta");
